@@ -1,9 +1,9 @@
 from flask import Flask, render_template, request
-import joblib
+import pickle
 
 app = Flask(__name__)
-# load the model
-model = joblib.load(open('lrmodel_jlib','rb'))
+# load the file
+file = pickle.load(open('lr_model.pickle','rb'))
 
 @app.route('/')
 def home():
@@ -17,7 +17,7 @@ def predict():
     sepal_width = float(request.form['sepal_width'])
     petal_length = float(request.form['petal_length'])
     petal_width = float(request.form['petal_width'])
-    result = model.predict([[sepal_length, sepal_width, petal_length, petal_width]])[0]
+    result = file.predict([[sepal_length, sepal_width, petal_length, petal_width]])[0]
     return render_template('result.html', **locals())
 
 if __name__ == '__main__':
