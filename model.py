@@ -79,4 +79,4 @@ joblib.dump(model, open(filename,'wb'))
 load_model = joblib.load(open(filename,'rb'))
      
 
-load_model.predict([[6.0, 2.2,4.0,1.0]])
+load_model.predict([[6.0,2.2,4.0,1.0]])
