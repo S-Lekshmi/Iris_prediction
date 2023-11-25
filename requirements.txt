@@ -1,2 +1,5 @@
+Pandas
+Numpy
+Scikit-learn
 Flask
 Gunicorn
