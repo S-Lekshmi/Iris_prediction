@@ -70,12 +70,13 @@ print('KNN Accuracy : ',model.score(x_test, y_test))
 print('DT Accuracy : ', accuracy_score(y_test,dt_pred))
 
 # save the model
-import pickle
-filename = 'lr_model.pkl'
-pickle.dump(model, open(filename, 'wb'))
+import joblib
+
+filename = 'lr_model_jlib'
+joblib.dump(model, open(filename, 'wb'))
      
 
-load_model = pickle.load(open(filename,'rb'))
+load_model = joblib.load(open(filename,'rb'))
      
 
 load_model.predict([[6.0, 2.2,4.0,1.0]])
