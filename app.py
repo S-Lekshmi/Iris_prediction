@@ -3,7 +3,7 @@ import joblib
 
 app = Flask(__name__)
 # load the model
-model = joblib.load(open('lr_model_jlib', 'rb'))
+model = joblib.load(open('lr_model_jlib','rb'))
 
 @app.route('/')
 def home():
