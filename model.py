@@ -34,40 +34,10 @@ model  = lr.fit(x_train,y_train)
 lr_predictions = model.predict(x_test)
 
      
-
 from sklearn.metrics import accuracy_score
-
-
-from sklearn.neighbors import KNeighborsClassifier
-model = KNeighborsClassifier()
-     
-
-model.fit(x_train, y_train)
-     
-KNeighborsClassifier()
-
-
-model.score(x_test, y_test)
-     
-
-
-from sklearn.svm import SVC
-svm_class = SVC(kernel = 'linear')
-model = svm_class.fit(x_train,y_train)
-svm_pred = model.predict(x_test)
-     
-
-
-from sklearn.tree import DecisionTreeClassifier
-dt_class = DecisionTreeClassifier()
-model = dt_class.fit(x_train,y_train)
-dt_pred = model.predict(x_test)
      
 
 print('Logistic regression Accuracy : ',accuracy_score(y_test,lr_predictions))
-print('SVM linear Accuracy : ',accuracy_score(y_test,svm_pred))
-print('KNN Accuracy : ',model.score(x_test, y_test))
-print('DT Accuracy : ', accuracy_score(y_test,dt_pred))
 
 # save the model
 import pickle
