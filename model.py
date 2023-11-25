@@ -72,7 +72,7 @@ print('DT Accuracy : ', accuracy_score(y_test,dt_pred))
 # save the model
 import joblib
 
-filename = 'lr_model_jlib'
+filename = 'lrmodel_jlib'
 joblib.dump(model, open(filename,'wb'))
      
 
